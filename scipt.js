@@ -31,8 +31,12 @@ function setRandomColor() {
     g: Math.random(),
     b: Math.random(),
   };
-  const guess = net.run(color);
+
+  const guess = net.run(color)[0];
+
+  guessEl.style.color = guess > .5 ? '#fff' : '#000'
   colorEl.style.backgroundColor = `rgba(${color.r * 255}, ${color.g * 255}, ${
     color.b * 255
   })`;
+}
 }
