@@ -16,3 +16,4 @@ net.train(data);
 const diagram = document.getElementById("diagram");
 
 diagram.innerHTML = brain.utilities.toSVG(net);
+
