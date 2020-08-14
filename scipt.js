@@ -25,6 +25,22 @@ const printButton = document.getElementById("print-button");
 let color;
 setRandomColor();
 
+whiteButton.addEventListener('click', () => {
+    chooseColor(1)
+})
+
+blackButton.addEventListener('click', () => {
+    chooseColor(0)
+})
+
+function chooseColor(value) {
+    data.push({
+        input: color,
+        output: [value]
+    })
+    setRandomColor()
+}
+
 function setRandomColor() {
   color = {
     r: Math.random(),
