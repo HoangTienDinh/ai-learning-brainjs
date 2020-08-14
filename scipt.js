@@ -17,3 +17,22 @@ const diagram = document.getElementById("diagram");
 
 diagram.innerHTML = brain.utilities.toSVG(net);
 
+const colorEl = document.getElementById("color");
+const guessEl = document.getElementById("guess");
+const whiteButton = document.getElementById("white-button");
+const blackButton = document.getElementById("black-button");
+const printButton = document.getElementById("print-button");
+let color;
+setRandomColor();
+
+function setRandomColor() {
+  color = {
+    r: Math.random(),
+    g: Math.random(),
+    b: Math.random(),
+  };
+  const guess = net.run(color);
+  colorEl.style.backgroundColor = `rgba(${color.r * 255}, ${color.g * 255}, ${
+    color.b * 255
+  })`;
+}
