@@ -33,12 +33,19 @@ blackButton.addEventListener('click', () => {
     chooseColor(0)
 })
 
+printButton.addEventListener('click', print)
+
+
 function chooseColor(value) {
     data.push({
         input: color,
         output: [value]
     })
     setRandomColor()
+}
+
+function print() {
+    console.log(JSON.stringify(data))
 }
 
 function setRandomColor() {
